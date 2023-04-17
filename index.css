@@ -27,7 +27,7 @@ margin-bottom: 1px;
 width:100%;
 /* margin-top:-70px; */
 z-index: 10;
-position: absolute;
+position: relative;
 
 } 
 .navbar ul{
@@ -62,8 +62,31 @@ p{
 }
 strong{
     color:rgb(27, 207, 81);
+   /* -webkit-text-stroke:0.3vw #000;
+   text-transform: uppercase; */
+   position: relative;
 }
-#container button{
+strong::before{
+  /* content: attr(data-text); */
+  position: absolute;
+  top: 0;
+  left:0;
+  color: rgb(27, 207, 81);
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  /* -webkit-text-stroke: 0vw #0a0a0a;
+  animation: animate 5s linear infinite; */
+}
+/* @keyframes animate {
+  0%,10%,100%{
+   width: 0;
+ }
+ 70%,90%{
+ width: 100%;
+}
+} */
+button{
     margin-top: 50px;
     margin-left: 100px;
     padding: 10px 35px;
@@ -75,13 +98,16 @@ strong{
     text-decoration: none;
     color:black;
 }
+
 .btn{
  
   width:310px;
   height:310px;
-  margin-right: 150px;
-   float: right;
+  margin-left: 905px;
    margin-top: 200px;
+   overflow: hidden;
+   position: absolute;
+   
 }
 .glowing-circle{
     background: rgb(28, 184, 87);
@@ -111,7 +137,7 @@ strong{
      position:absolute;  
   }
   .glowing-circle span:nth-child(1){
-   filter: blur(10px);
+   filter: blur(5px);
   }
   .IMAGE{
    
@@ -132,39 +158,71 @@ strong{
      position:absolute;
      z-index: 1;
   }
+  .image{
+  
+    left:5%;
+    transform: translateX(-50%);
+     border-radius: 50%;
+     max-width: 200px;
+     object-fit: cover;
+     position:absolute;
+     z-index: 1;
+  }
 .bxl-facebook-circle{
     color:rgb(73, 175, 64);
-    font-size: 3rem;
+    font-size: 2rem;
     position:absolute;
-    margin-top: 570px;
+    margin-top: 500px;
     z-index: 10;
-    margin-left: 300px;
+    margin-left: 230px;
+}
+.bxl-facebook-circle:hover{
+    background:linear-gradient(rgb(129, 212, 80),rgb(206, 37, 122));
+    border-radius: 50%;
+  
 }
 .bxl-instagram-alt{
     color:rgb(38, 158, 78);
-    font-size: 3rem;
+    font-size: 2rem;
     position:absolute;
-    margin-top: 570px;
+    margin-top: 500px;
     z-index: 10;
-    margin-left: 220px;
+    margin-left: 170px;
+}
+.bxl-instagram-alt:hover{
+  background:linear-gradient(rgb(129, 212, 80),rgb(206, 37, 122));
+  border-radius: 50%;
 }
 .bxl-whatsapp{
     color:rgb(59, 179, 85);
-    font-size: 3rem;
+    font-size: 2rem;
     position:absolute;
-    margin-top: 570px;
+    margin-top: 500px;
    z-index: 10;
-   margin-left: 140px;
+   margin-left: 120px;
+}
+.bxl-whatsapp:hover{
+  background:linear-gradient(rgb(129, 212, 80),rgb(206, 37, 122));
+  border-radius: 50%;
+}
+.bxl-linkedin{
+  color:rgb(59, 179, 85);
+  font-size: 2rem;
+  position:absolute;
+  margin-top: 500px;
+ z-index: 10;
+ margin-left: 70px;
+ border-radius: 20px;
+}
+.bxl-linkedin:hover{
+  background:linear-gradient(rgb(129, 212, 80),rgb(206, 37, 122));
+  border-radius: 50%;
 }
 .feedback{
     display:flex;
     z-index: 10;
     position:absolute;
 }
-
-
-  
-
 .loginbox{
     background-color:white;
    border: black;
@@ -259,16 +317,268 @@ margin-top: 20px;
     margin-right: 70px;
    
 }
-.FOOTER{
-    background:linear-gradient(rgb(129, 212, 80),rgb(206, 37, 122));
-    /* margin: 0; */
-    /* margin-left: 500px; */
-    padding:2rem 1rem;
-    margin-top: 70px;
+.p{
+  background-color: rgb(214, 197, 197);
+  width: 500px;
+ box-shadow:inset -5px -5px rgba(0, 0, 0, 0.23);
+ border-radius: 20px;
+ float: right;
+}
+.p p{
+  font-size: 20px;
+  margin: 60px;
+  padding-top: 60px;
+}
+.Skills-image img{
+  width: 500px;
+  margin-top: -80px;
+ position: absolute;
+}
+.skill{
+  background-color: rgb(214, 197, 197);
+  width: 500px;
+  margin: 60px;
+ padding:20px;
+ box-shadow:inset -5px -5px rgba(0, 0, 0, 0.23);
+ border-radius: 20px;
+
+margin-top: 500px;
+margin-left: 380px;
+}
+.skill li{
+  list-style: none;
+  font-size: 1rem;
+}
+.skill h1{
+  text-align: center;
+  font-size: 2rem;
+}
+.skill h3{
+  font-size: 1rem;
+}
+.bar{
+ background-color:black;
+ height: 20px;
+ display: block;
+ border: 1px solid grb(0,0,0,0.3);
+ overflow: hidden;
+ box-shadow: 1px,3px rgb(0,0,0,0.12),0 1px 2px rgba(0, 0, 0, 0.24);
+ transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+.bar:hover{
+  box-shadow: 0 14px rgb(0,0,0,0.12),0 10px 10px rgb(0,0,0,0.22);
+ }
+.bar span{
+  background-color:green;
+  height: 20px;
+  float: left;
+  
+ }
+ .matlab{
+  width: 87%;
+ animation: matlab 3s;
+  
+ }
+ .Skills-image{
+ 
+  width:410px;
+  height:410px;
+  margin-right: 150px;
+   float: left;
+   margin-top: 100px;
+}
+.img{
+    background: rgb(28, 184, 87);
     width:100%;
-    /* margin-top:-70px; */
-    z-index: 10;
+    height:100%;
+     border-radius: 50%;
+     display: flex;
+     position: relative;
+     justify-content: center;
+     align-items: center;
+     
+  }
+  .img::after{
+    content:'';
     position: absolute;
-    
-    } 
+    background:black;
+    width: 380px;;
+    height: 380px;
+     border-radius: 50%;
+     
+  }
+  .img span{
+    background:linear-gradient(rgb(129, 212, 80),rgb(214, 197, 197));
+    width:100%;
+    height:100%;
+     border-radius: 50%;
+     position:absolute;  
+  }
+  .img span:nth-child(1){
+   filter: blur(10px);
+  }
+  .IMG{
    
+    width: 380px;;
+    height: 380px;
+     border-radius: 50%;
+    overflow: hidden;
+     position: relative;
+     
+  }
+  .IMG img{
+  
+    left:50%;
+    transform: translateX(-50%);
+     border-radius: 50%;
+     max-width: 250px;
+     object-fit: cover;
+     position:absolute;
+     z-index: 1;
+     margin-top: 5px;
+     
+  }
+ @keyframes matlab{
+  0%{
+    width:0%;
+ }
+ 100%{
+  width:87%;
+}
+ }
+ .html{
+  width: 80%;
+ animation: html 3s;
+  
+ }
+ @keyframes html{
+  0%{
+    width:0%;
+ }
+ 100%{
+  width:80%;
+}
+ }
+ .css{
+  width: 75%;
+ animation: css 3s;
+  
+ }
+ @keyframes css{
+  0%{
+    width:0%;
+ }
+ 100%{
+  width:75%;
+}
+ }
+ .adobe{
+  width: 55%;
+ animation: adobe 3s;
+  
+ }
+ @keyframes adobe{
+  0%{
+    width:0%;
+ }
+ 100%{
+  width:55%;
+}
+ }
+ .javascript{
+  width: 60%;
+ animation: javascript 3s;
+  
+ }
+ @keyframes javascript{
+  0%{
+    width:0%;
+ }
+ 100%{
+  width:60%;
+}
+ }
+ .c{
+  width: 85%;
+ animation: c 3s;
+  
+ }
+ @keyframes c{
+  0%{
+    width:0%;
+ }
+ 100%{
+  width:85%;
+}
+ }
+ .adobe2{
+  width: 50%;
+ animation: adobe 3s;
+  
+ }
+ @keyframes adobe2{
+  0%{
+    width:0%;
+ }
+ 100%{
+  width:50%;
+}
+ }
+@media screen and (max-width:800px) {
+  .navbar{
+    width:100%;
+  display: block;
+padding-top: 50px;
+z-index: 10;
+position: absolute;
+height: 15vh;
+}
+.navbar ul{
+ display: block;
+}
+.navbar ul a{
+padding-right: 10px;
+}
+.ba img{
+  margin-top: 50px;
+ }
+ .btn{
+ 
+  margin-left:200px;
+   margin-top: 300px;
+}
+.glowing-circle{
+  margin-left:150px;
+}
+#container button{
+  margin-top: 50px;
+  margin-left: 50px;
+  
+}
+#container p{
+  padding-top: 80px;
+  margin-left: 10px;
+  width: 55%;
+}
+.image{
+  margin-top: 50px;
+}
+.contactus{
+display: flex;
+
+    }
+    .contactus loginbox{
+     margin-right: 100px;
+    }
+    .loginbox{
+      margin-top: 200px;
+     margin-left: 5%;
+     width:40%;
+    }
+    .address{
+  margin-left: 150px;
+padding-left: 20px;
+width: 40% !important;;
+  } 
+}
+
